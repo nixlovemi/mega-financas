@@ -160,6 +160,47 @@ class MovimentacaoModel extends BaseModel{
 	public function editarCompetencia(){
 		return $this->viewModel;
 	}
-}
 
-?>
+        /**
+         * recebe o array com as movimentações pra totalizar. retorna um array com os totais, pagos e não pagos
+         * @param array $arrMov
+         * @return array
+         */
+        public function criaArrTotais($arrMov){
+
+            $arrTotalContas = array();
+            $arrTotalContas["qt"] = 0;
+            $arrTotalContas["vlr"] = 0;
+
+            $arrTotalAberto = array();
+            $arrTotalAberto["qt"] = 0;
+            $arrTotalAberto["vlr"] = 0;
+
+            $arrTotalPago = array();
+            $arrTotalPago["qt"] = 0;
+            $arrTotalPago["vlr"] = 0;
+
+            foreach($arrMov as $movimentacao){
+                $vlrConta = $movimentacao["valor"];
+                $vlrPago = (isset($movimentacao["valor_pago"])) ? $movimentacao["valor_pago"]: $movimentacao["valor"]; // por causa de transferencia
+                
+                $arrTotalContas["qt"]++;
+                $arrTotalContas["vlr"] += $vlrConta;
+                
+                if(!is_numeric($vlrPago)){
+                    $arrTotalAberto["qt"]++;
+                    $arrTotalAberto["vlr"] += $vlrConta;
+                } else {
+                    $arrTotalPago["qt"]++;
+                    $arrTotalPago["vlr"] += $vlrPago;
+                }
+            }
+            
+            $arrTotais = array();
+            $arrTotais["totalContas"] = $arrTotalContas;
+            $arrTotais["totalAberto"] = $arrTotalAberto;
+            $arrTotais["totalPago"] = $arrTotalPago;
+
+            return $arrTotais;
+        }
+}

@@ -1,6 +1,7 @@
 <?php
 $MovimentacaoTipo = $viewModel->get("MovimentacaoTipo");
 $arr_movimentacoes = $viewModel->get("arr_movimentacoes");
+$arr_totais = $viewModel->get("arr_totais");
 $conta_descricao = $viewModel->get("conta_descricao");
 $id_conta = $viewModel->get("id_conta");
 $arr_contas = $viewModel->get("arr_contas");
@@ -14,4 +15,3 @@ $tp_movimentacao = $viewModel->get("tp_movimentacao");
 
 // @todo nao sei pq aqui precisou fazer isso
 include $_SERVER ['BIRDS_HOME'] . "views/Movimentacao/index.php";
-?>

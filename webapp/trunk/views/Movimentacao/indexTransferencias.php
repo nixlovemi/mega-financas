@@ -1,6 +1,7 @@
 <?php
 $erro_msg = (isset($erro_msg)) ? $erro_msg: "";
 $arr_movimentacoes = (isset($arr_movimentacoes)) ? $arr_movimentacoes: $viewModel->get("arr_movimentacoes");
+$arr_totais = $viewModel->get("arr_totais");
 $conta_descricao = (isset($conta_descricao)) ? $conta_descricao: $viewModel->get("conta_descricao");
 $arr_contas = (isset($arr_contas)) ? $arr_contas: $viewModel->get("arr_contas");
 $dt_ini = (isset($data_inicio)) ? $data_inicio: $viewModel->get("data_inicio");
@@ -126,5 +127,46 @@ $dt_fim = (isset($data_fim)) ? $data_fim: $viewModel->get("data_fim");
 	      </div>
 	    </div>
 	  </div>
+
+          <div style="margin-top:30px;"></div>
+
+            <div class="row no-margin">
+                <?php
+                $cntContas = (isset($arr_totais["totalContas"]["qt"])) ? $arr_totais["totalContas"]["qt"]: 0;
+                $vlrContas = (isset($arr_totais["totalContas"]["vlr"])) ? $arr_totais["totalContas"]["vlr"]: 0;
+                ?>
+                <div class="col-md-4">
+                    <section class="widget btn-info text-center">
+                      <div class="widget-details col-xs-6">
+                        <h2 class="no-margin"><?php echo $cntContas; ?></h2>
+                        <small class="text-uppercase">Total de Contas</small>
+                      </div>
+                      <div class="widget-details col-xs-6">
+                        <h2 class="no-margin">R$ <?php echo number_format($vlrContas, 2, ",", "."); ?></h2>
+                        <small class="text-uppercase">Valor Total das Contas</small>
+                      </div>
+                    </section>
+                </div>
+
+                <?php
+                $cntPago = (isset($arr_totais["totalPago"]["qt"])) ? $arr_totais["totalPago"]["qt"]: 0;
+                $vlrPago = (isset($arr_totais["totalPago"]["vlr"])) ? $arr_totais["totalPago"]["vlr"]: 0;
+                ?>
+                <div class="col-md-4">
+                    <section class="widget btn-info text-center">
+                      <div class="widget-details col-xs-6">
+                        <h2 class="no-margin"><?php echo $cntPago; ?></h2>
+                        <small class="text-uppercase">Contas Pagas</small>
+                      </div>
+                      <div class="widget-details col-xs-6">
+                        <h2 class="no-margin">R$ <?php echo number_format($vlrPago, 2, ",", "."); ?></h2>
+                        <small class="text-uppercase">Valor Total das Contas Pagas</small>
+                      </div>
+                    </section>
+                </div>
+            </div>
+	  </div>
+	</div>
+
 	</div>
 </div>

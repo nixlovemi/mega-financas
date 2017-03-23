@@ -54,6 +54,10 @@ class MovimentacaoController extends BaseController{
 		}
 		$arr_movEntradas = $objResp->getRetByKey("arr_movEntradas");
 		// ===============================
+
+                // cria array totalizador ========
+                $arrTotais = $this->model->criaArrTotais($arr_movEntradas);
+                // ===============================
 		
 		$viewModel = new ViewModel();
 		$viewModel = $this->model->indexReceitas();
@@ -64,6 +68,7 @@ class MovimentacaoController extends BaseController{
 		$viewModel->set("id_conta", $idConta);
 		$viewModel->set("arr_contas", $arrContas);
 		$viewModel->set("arr_movimentacoes", $arr_movEntradas);
+                $viewModel->set("arr_totais", $arrTotais);
 		$viewModel->set("btn_topo_id", "btn-nova-receita");
 		$viewModel->set("btn_topo_text", "NOVA RECEITA");
 		$viewModel->set("icon_topo_name", "fa-money");
@@ -108,6 +113,10 @@ class MovimentacaoController extends BaseController{
 		}
 		$arr_movSaida = $objResp->getRetByKey("arr_movSaidas");
 		// ===============================
+
+                // cria array totalizador ========
+                $arrTotais = $this->model->criaArrTotais($arr_movSaida);
+                // ===============================
 		
 		$viewModel = new ViewModel();
 		$viewModel = $this->model->indexReceitas();
@@ -118,6 +127,7 @@ class MovimentacaoController extends BaseController{
 		$viewModel->set("id_conta", $idConta);
 		$viewModel->set("arr_contas", $arrContas);
 		$viewModel->set("arr_movimentacoes", $arr_movSaida);
+                $viewModel->set("arr_totais", $arrTotais);
 		$viewModel->set("btn_topo_id", "btn-nova-despesa");
 		$viewModel->set("btn_topo_text", "NOVA DESPESA");
 		$viewModel->set("icon_topo_name", "fa-money");
@@ -1130,12 +1140,17 @@ class MovimentacaoController extends BaseController{
 		$MovimentacaoServ = new MovimentacaoService();
 		$objRet = $MovimentacaoServ->pegaTransferencias($Usuario, $Conta);
 		$arrTransf = ($objRet->isOk()) ? $objRet->getRetByKey("arr_transferencias"): array();
+
+                // cria array totalizador ========
+                $arrTotais = $this->model->criaArrTotais($arrTransf);
+                // ===============================
 		
 		$viewModel = new ViewModel();
 		$viewModel = $this->model->indexTransferencias();
 		
 		$viewModel->set("erro_msg", $erro_msg);
 		$viewModel->set("arr_movimentacoes", $arrTransf);
+                $viewModel->set("arr_totais", $arrTotais);
 		$viewModel->set("conta_descricao", $Conta->getNome());
 		$viewModel->set("arr_contas", $arrContas);
 		$viewModel->set("data_inicio", $dtInicio);
@@ -1403,4 +1418,3 @@ class MovimentacaoController extends BaseController{
 		}
 	}
 }
-?>
