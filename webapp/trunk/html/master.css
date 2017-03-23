@@ -1,0 +1,256 @@
+@CHARSET "ISO-8859-1";
+
+a {text-decoration: none; transition: all 300ms ease 0s;}
+a.link-blue{color: #3b7f98 !important;}
+.txt-algn-l{text-align: left !important;}
+.txt-algn-r{text-align: right !important;}
+.align-left, .fl{float: left;}
+.align-right, .fr{float: right;}
+
+.circle {
+  display: block;
+  background: black;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+
+/*custom modal*/
+.remodal{
+	padding: 23px 5px 5px 5px !important;
+	display: table;
+    margin: 0 auto;
+}
+.remodal-wrapper {
+    text-align: inherit !important;
+    padding: 28px 10px 0 !important;
+}
+.remodal-close{
+	left: inherit;
+	right: 0;
+}
+/*============*/
+
+/*custom sweetalert*/
+.sweet-overlay {
+    background-color: rgba(0, 0, 0, 0.82) !important;
+}
+.sweet-alert {
+	padding: 10px 10px 13px 10px !important;
+}
+.sweet-alert .panel{
+	margin-bottom: 0 !important;
+}
+.sweet-alert .sa-button-container button{
+	margin: 5px 5px 0 !important;
+}
+.sweet-alert .panel-body{
+	padding: 10px 10px 10px 2px !important;
+}
+.sweet-alert h2 {
+   font-size: 27px !important;
+   margin: 0 0 8px !important;
+   padding: 0 !important;
+}
+.swal-sem-btn-confirm .confirm{
+	display:none !important;
+}
+
+@media all and (max-width: 342px) and (min-width: 250px) {
+  .sweet-alert .sa-button-container button{
+	  padding: 10px 19px !important;
+  }
+}
+/*-----------------*/
+
+/*date picker*/
+.datepicker table tr td.active.active, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled.disabled, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled.active:hover, .datepicker table tr td.active.disabled.disabled:hover, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active.disabled[disabled]:hover, .datepicker table tr td.active.disabled[disabled], .datepicker table tr td.active:active, .datepicker table tr td.active:hover, .datepicker table tr td.active.active:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active:hover:active, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active[disabled]:hover, .datepicker table tr td.active[disabled] {
+    background-color: #0099cc;
+}
+/*-----------*/
+
+body.login-bg{
+	background: #5eb8d5 url("images/login-bg-min.jpg") no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+div.login-wrapper{
+	background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    border-bottom: 1px solid rgba(83, 83, 83, 0.3);
+    border-top: 1px solid rgba(83, 83, 83, 0.3);
+    box-shadow: 0 0 250px 100px rgba(0, 0, 0, 0.35) inset;
+    margin-top: 10%;
+    width: 100%;
+}
+div.login-container{
+	margin: 20px auto;
+    max-width: 500px;
+    width: 80%;
+}
+.login-logo{
+	margin: 15px 0 20px;
+    text-align: center;
+}
+.login-form-group{
+	margin-bottom: 15px;
+}
+.login-form input {
+    border: 1px solid #fff;
+}
+.login-form input {
+    border-radius: 2px;
+    height: auto;
+    padding: 18px 15px;
+}
+.btn-login{
+	transition: all 300ms ease 0s;
+}
+.btn-login:hover{
+	background-color: #696969;
+    border-color: #696969;
+}
+.login-form .btn {
+    padding: 15px;
+    color: #fff;
+    white-space: pre-line;
+}
+.btn-dark {
+    background-color: #535353;
+    border-color: #535353;
+    color: #fff;
+    font-size: 1.28571rem;
+}
+.or {
+    font-family: sans-serif;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: lighter;
+    color: #f8f8f8;
+}
+.l-span-md-12 {
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+.l-col-sm-6 {
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 2%;
+    width: 49%;
+}
+.l-col-sm-6:last-child {
+    margin-right: 0;
+}
+.login-options {
+    display: table;
+    line-height: 1;
+    margin: 15px 0;
+    width: 100%;
+    padding-bottom: 15px;
+}
+.login-options a{
+	font-size:15px;
+	color: #fff !important;
+	
+	-ms-word-break: break-all;
+}
+.login-options a:hover{
+	color: #adbde0 !important;
+}
+.login-social::after {
+    clear: both;
+}
+.login-social::before, .login-social::after {
+    content: " ";
+    display: table;
+}
+.input-register-home{
+	display:block !important;
+}
+.checkbox-register-home {
+  display: inline !important;
+  width: auto !important;
+  border: none !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+.register-terms-holder{
+	font-size: 13px;
+}
+.register-terms-holder a{
+	color: #3b7f98 !important;
+}
+span.spn-terms-link{
+	left: 3px;
+    position: relative;
+    top: -2px;
+}
+p.register-p-error{
+	color: #FF0000 !important;
+	font-size: 12px !important;
+	display: none;
+	width: 100%;
+	text-align: center;
+}
+
+
+@media all and (max-width: 446px) and (min-width: 337px) {
+  a.btn-twitter{padding: 25px 0 25px 0 !important;}
+}
+
+@media only screen and (max-width: 800px) {
+    
+    /* Force table to not be like tables anymore */
+	.no-more-tables table, 
+	.no-more-tables thead, 
+	.no-more-tables tbody, 
+	.no-more-tables th, 
+	.no-more-tables td, 
+	.no-more-tables tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.no-more-tables thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	.no-more-tables tr { border: 1px solid #ccc; }
+ 
+	.no-more-tables td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	.no-more-tables td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	.no-more-tables td:before { content: attr(data-title); }
+}

@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php?controller=$1&action=$2&id=$3&%{QUERY_STRING} [NC,L]
+
+#COLOQUEI NO PHP.INI
+#[MegaFinancasApp]
+#megafinan.cfg.BIRDS_HOME = '/home/megafinancas/public_html/app/'
+#megafinan.cfg.BIRDS_HOME_URL = 'http://app.megafinancas.com.br/'
+#SetEnv BIRDS_HOME "/home/megafinancas/public_html/app/"
+#SetEnv BIRDS_HOME_URL "http://app.megafinancas.com.br/"
+#===================
